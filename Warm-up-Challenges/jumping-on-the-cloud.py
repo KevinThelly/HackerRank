@@ -11,13 +11,20 @@ def jumpingOnClouds(c):
     i=0
     jump=0
     while(i<len(c)-1):
+        # print(i)
         if(c[i+1]==1):
             i=i+2
             jump=jump+1
         elif(c[i+1]==0):
-            if(c[i+2]==0):
-                i=i+2
-            else:
+            # print("i+1=0")
+            if(i+2<len(c)):
+                if(c[i+2]==0):
+                    # print("i+2=0")
+                    i=i+2
+                    jump=jump+1
+                    continue
+            if(c[i+1]==0):
+                # print("i+1=0")
                 i=i+1
             jump=jump+1
     return jump
